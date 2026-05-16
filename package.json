@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/parsaabedi03/authoraization-system/issues"
   },
-  "homepage": "https://github.com/parsaabedi03/authoraization-system#readme"
+  "homepage": "https://github.com/parsaabedi03/authoraization-system#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2"
+  }
 }
