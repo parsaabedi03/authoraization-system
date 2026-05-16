@@ -1,0 +1,21 @@
+{
+  "name": "authorization-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parsaabedi03/authoraization-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/parsaabedi03/authoraization-system/issues"
+  },
+  "homepage": "https://github.com/parsaabedi03/authoraization-system#readme"
+}
