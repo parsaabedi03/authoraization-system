@@ -1,4 +1,7 @@
 const { genSaltSync, hashSync, compareSync } = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+const secret = "awldnva903482jandjkansjknbvsdojnjka238jznsfj";
 
 function hashPassword(password) {
   const salt = genSaltSync(10);
@@ -7,5 +10,10 @@ function hashPassword(password) {
 function comparePassword(password, hashed) {
   return compareSync(password, hashed);
 }
-
-module.exports = { hashPassword, comparePassword };
+function signToken(payload) {
+  return jwt.sign(payload, secret);
+}
+function verifyToken(token) {
+  return jwt.verify(token, secret);
+}
+module.exports = { hashPassword, comparePassword, signToken, verifyToken };
