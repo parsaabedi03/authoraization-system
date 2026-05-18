@@ -1,5 +1,5 @@
 const userModel = require("../module/user.module");
-const { hashPassword } = require("../utils/auth.util");
+const { hashPassword, comparePassword } = require("../utils/auth.util");
 
 async function register(req, res, next) {
   try {
@@ -15,7 +15,21 @@ async function register(req, res, next) {
   }
 }
 function login(req, res, next) {
-  res.send("login system");
+  try {
+    const { email, password } = req.body;
+    const user = userModel.findOne({ email });
+    if (!user) throw { status: 404, message: "Not Found User" };
+    if (comparePassword(password, user.password)) {
+      res.send("login system");
+    } else {
+      throw {
+        status: 400,
+        message: "email or password is incorrect",
+      };
+    }
+  } catch (error) {
+    next(error);
+  }
 }
 
 module.exports = {
